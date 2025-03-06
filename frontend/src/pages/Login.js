@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import authService from '../services/api/auth.service';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -15,14 +16,22 @@ const Login = () => {
     setMessage('');
     setLoading(true);
     
-    // 여기에 로그인 API 호출 로직 추가
-    console.log('Login attempt with:', { username, password });
-    
-    // 임시 로그인 성공 처리
-    setTimeout(() => {
-      setLoading(false);
-      navigate('/');
-    }, 1000);
+    // 실제 로그인 API 호출
+    authService.login(username, password)
+      .then(() => {
+        navigate('/');
+      })
+      .catch(error => {
+        const resMessage =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+        
+        setMessage(resMessage);
+        setLoading(false);
+      });
   };
 
   return (
