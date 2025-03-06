@@ -1,158 +1,124 @@
-# 게시판 프로젝트 (Board Project)
+# 게시판 구축 프로젝트 (Board Construction Project)
 
 ## 프로젝트 개요
-이 프로젝트는 사용자들이 게시글을 작성, 조회, 수정, 삭제할 수 있는 기본적인 게시판 시스템입니다.
 
-## 주요 기능
-- 사용자 관리
-  - 회원가입
-  - 로그인/로그아웃
-  - 프로필 관리
-
-- 게시글 관리
-  - 게시글 작성
-  - 게시글 조회
-  - 게시글 수정
-  - 게시글 삭제
-  - 게시글 목록 페이징
-
-- 댓글 기능
-  - 댓글 작성
-  - 댓글 수정/삭제
-
-- 파일 첨부 기능
-  - 이미지 업로드
-  - 일반 파일 첨부
+이 프로젝트는 사용자들이 게시글을 작성하고, 댓글을 달고, 파일을 공유할 수 있는 웹 기반 게시판 시스템을 구축하는 것을 목표로 합니다. 이 시스템은 사용자 인증, 권한 관리, 게시글 및 댓글 CRUD 기능, 파일 업로드/다운로드, 검색 기능 등을 제공합니다.
 
 ## 기술 스택
-- Backend
-  - Python 3.9+
-  - FastAPI
-  - PostgreSQL (with psycopg2)
-  - Raw SQL 쿼리 사용
 
-- Frontend
-  - React
-  - TypeScript
-  - Tailwind CSS
-  - Axios
+- **프론트엔드**: React
+- **백엔드**: Spring Boot
+- **데이터베이스**: PostgreSQL
+- **인증**: JWT (JSON Web Tokens)
+- **파일 저장소**: AWS S3 또는 로컬 파일 시스템
+- **배포**: Docker, AWS/GCP/Azure
 
-## 개발 환경 설정
-1. 필요 조건
-   - Python 3.9 이상
-   - Node.js 16.0 이상
-   - PostgreSQL 13.0 이상
+## 주요 기능
 
-2. 설치 방법
-```bash
-# Backend
-git clone [repository-url]
-cd [project-directory]
-python -m venv venv
-source venv/bin/activate  # Windows: .\venv\Scripts\activate
-pip install -r requirements.txt
+- 사용자 관리 (회원가입, 로그인, 프로필 관리)
+- 게시판 관리 (카테고리 생성, 수정, 삭제)
+- 게시글 관리 (작성, 조회, 수정, 삭제)
+- 댓글 관리 (작성, 조회, 수정, 삭제)
+- 파일 첨부 기능
+- 검색 기능
+- 알림 기능
+- 관리자 대시보드
 
-# Frontend
-cd frontend
-npm install
-```
+## 설치 및 실행 방법
 
-3. 환경 변수 설정
-```
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=board_db
-DB_USER=your_username
-DB_PASSWORD=your_password
-SECRET_KEY=your_secret_key
-```
+### 사전 요구사항
 
-4. 데이터베이스 초기화
-```bash
-# PostgreSQL 접속
-psql -U your_username -d postgres
+- Java 17 이상
+- Node.js (v14 이상)
+- PostgreSQL
+- npm 또는 yarn
 
-# 데이터베이스 생성
-CREATE DATABASE board_db;
+### 설치 방법
 
-# 초기 테이블 생성 스크립트 실행
-psql -U your_username -d board_db -f ./backend/db/init.sql
-```
+1. 저장소 클론
+   ```bash
+   git clone https://github.com/medialog-AX-TF/cursor_project.git
+   cd cursor_project
+   ```
 
-5. 실행 방법
-```bash
-# Backend
-uvicorn main:app --reload
+2. 백엔드 설정
+   ```bash
+   # 백엔드 디렉토리로 이동
+   cd backend
+   
+   # Maven으로 의존성 설치 및 빌드
+   ./mvnw clean install
+   
+   # 애플리케이션 실행
+   ./mvnw spring-boot:run
+   ```
 
-# Frontend
-cd frontend
-npm run dev
-```
+3. 프론트엔드 설정
+   ```bash
+   # 프론트엔드 디렉토리로 이동
+   cd ../frontend
+   
+   # 의존성 설치
+   npm install
+   
+   # 개발 서버 실행
+   npm start
+   ```
 
-## API 문서
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+4. 데이터베이스 설정
+   - PostgreSQL 데이터베이스 생성
+   - `application.properties` 또는 `application.yml` 파일에서 데이터베이스 연결 정보 설정
+   ```
+   spring.datasource.url=jdbc:postgresql://localhost:5432/cursor
+   spring.datasource.username=root
+   spring.datasource.password=****
+   ```
 
 ## 프로젝트 구조
-```
-project_A/
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── db/
-│   │   │   ├── connection.py
-│   │   │   └── queries/
-│   │   │       ├── users.py
-│   │   │       ├── posts.py
-│   │   │       └── comments.py
-│   │   └── schemas/
-│   ├── db/
-│   │   └── init.sql
-│   ├── tests/
-│   └── main.py
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── services/
-│   └── package.json
-├── README.md
-└── requirements.txt
-```
 
-## 라이센스
-MIT License
+```
+cursor_project/
+├── frontend/                # 프론트엔드 코드 (React)
+│   ├── public/              # 정적 파일
+│   ├── src/                 # 소스 코드
+│   │   ├── components/      # 리액트 컴포넌트
+│   │   ├── pages/           # 페이지 컴포넌트
+│   │   ├── services/        # API 서비스
+│   │   ├── utils/           # 유틸리티 함수
+│   │   └── App.js           # 메인 앱 컴포넌트
+│   └── package.json         # 프론트엔드 의존성
+├── backend/                 # 백엔드 코드 (Spring Boot)
+│   ├── src/                 # 소스 코드
+│   │   ├── main/
+│   │   │   ├── java/        # Java 소스 코드
+│   │   │   │   ├── controller/ # 컨트롤러
+│   │   │   │   ├── model/      # 데이터 모델
+│   │   │   │   ├── repository/ # 데이터 접근 계층
+│   │   │   │   ├── service/    # 비즈니스 로직
+│   │   │   │   ├── config/     # 설정 클래스
+│   │   │   │   └── util/       # 유틸리티 클래스
+│   │   │   └── resources/  # 리소스 파일
+│   │   └── test/           # 테스트 코드
+│   └── pom.xml             # Maven 의존성
+├── .gitignore              # Git 무시 파일
+├── docker-compose.yml      # Docker 구성 파일
+└── README.md               # 프로젝트 설명
+```
 
 ## 기여 방법
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request 
 
-데이터베이스 스키마 설계와 초기화 SQL 스크립트를 작성해주세요. 
-필요한 모든 테이블의 컬럼, 제약조건, 인덱스를 포함해주세요. 
+1. 이 저장소를 포크합니다.
+2. 새로운 브랜치를 생성합니다 (`git checkout -b feature/amazing-feature`).
+3. 변경사항을 커밋합니다 (`git commit -m 'Add some amazing feature'`).
+4. 브랜치에 푸시합니다 (`git push origin feature/amazing-feature`).
+5. Pull Request를 생성합니다.
 
-백엔드 API 구조와 엔드포인트 설계를 해주세요.
-각 API의 요청/응답 형식과 인증/인가 방식을 포함해주세요. 
+## 라이센스
 
-FastAPI를 사용한 백엔드 코드 구현을 해주세요.
-사용자 인증과 기본적인 CRUD 작업부터 시작하겠습니다. 
+이 프로젝트는 MIT 라이센스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
 
-React와 TypeScript를 사용한 프론트엔드 구조와 
-공통 컴포넌트 설계를 해주세요. 
+## 연락처
 
-프론트엔드 페이지 구현을 해주세요.
-사용자 인증과 게시글 관련 기능부터 시작하겠습니다. 
+프로젝트 관리자 - [이메일 주소](mailto:your.email@example.com)
 
-1. API 엔드포인트 테스트 코드 작성
-2. 프론트엔드 컴포넌트 단위 테스트
-3. 전체 시스템 통합 테스트 
-
-
-게시판 구축 프로젝트를 하려고 합니다. 당신은 리드미 파일과 요구사항 파일을 작성해 주시고  저에게 검증 받아 주세요
-
-ORM 은 사용지 않습니다
-
-당신이 작성한 리드미 와 요구사항을 기반으로 게시판을 구축하려면 내가 어떻게 요청하는 것이 가장 완성도 있는 게시판 구축을 할수 있나요 ?
+프로젝트 링크: [https://github.com/medialog-AX-TF/cursor_project](https://github.com/medialog-AX-TF/cursor_project) 
