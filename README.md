@@ -105,7 +105,7 @@ cursor_project/
 └── README.md               # 프로젝트 설명
 ```
 
-## 기여 방법
+## 형상관리 
 
 1. 이 저장소를 포크합니다.
 2. 새로운 브랜치를 생성합니다 (`git checkout -b feature/amazing-feature`).
@@ -113,11 +113,6 @@ cursor_project/
 4. 브랜치에 푸시합니다 (`git push origin feature/amazing-feature`).
 5. Pull Request를 생성합니다.
 
-## 라이센스
-
-이 프로젝트는 MIT 라이센스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
-
-## 연락처
 
 
 ![image](https://github.com/user-attachments/assets/eda2a256-7149-40cd-b7ae-73923182dab3)
