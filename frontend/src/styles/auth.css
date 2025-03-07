@@ -1,0 +1,212 @@
+/* 
+ * 게시판 프로젝트 - 인증 페이지 스타일시트
+ * 로그인, 회원가입 페이지를 위한 스타일
+ */
+
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--primary-color);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.auth-form .form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.auth-form label {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.auth-form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  outline: none;
+}
+
+.input-with-button {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.input-with-button input {
+  flex: 1;
+}
+
+.form-actions {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-actions .btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+}
+
+.auth-links {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.auth-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast) ease-in-out;
+}
+
+.auth-links a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.auth-links span {
+  margin: 0 var(--spacing-xs);
+  color: var(--text-light);
+}
+
+.social-login {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.social-login h3 {
+  font-size: var(--font-size-md);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  transition: all var(--transition-fast) ease-in-out;
+  position: relative;
+}
+
+.btn-social::before {
+  content: '';
+  position: absolute;
+  left: var(--spacing-md);
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-google {
+  background-color: #ffffff;
+  color: #757575;
+  border: 1px solid var(--border-color);
+}
+
+.btn-google::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23EA4335' d='M5.26620003,9.76452941 C6.19878754,6.93863203 8.85444915,4.90909091 12,4.90909091 C13.6909091,4.90909091 15.2181818,5.50909091 16.4181818,6.49090909 L19.9090909,3 C17.7818182,1.14545455 15.0545455,0 12,0 C7.27006974,0 3.1977497,2.69829785 1.23999023,6.65002441 L5.26620003,9.76452941 Z'/%3E%3Cpath fill='%23FBBC05' d='M12,18.1818182 C15.0545455,18.1818182 17.7818182,17.0363636 19.9090909,15.1818182 L16.4181818,11.6909091 C15.2181818,12.6818182 13.6909091,13.2818182 12,13.2818182 C8.86768422,13.2818182 6.21612883,11.2763075 5.27267048,8.46584878 L1.23999023,11.5829954 C3.19829183,15.5328349 7.26748937,18.1818182 12,18.1818182 Z'/%3E%3Cpath fill='%234285F4' d='M12,13.2818182 C8.8040698,13.2818182 6.21494538,11.2763401 5.27214339,8.46598664 L1.23999023,11.5829933 C3.19996183,15.5328524 7.26714562,18.1818182 12,18.1818182 L12,13.2818182 Z'/%3E%3Cpath fill='%2334A853' d='M12,18.1818182 C7.27006974,18.1818182 3.1977497,15.4835204 1.23999023,11.5328238 L5.27268602,8.41727687 C6.20689991,11.2334292 8.85609588,13.2727273 12,13.2727273 C13.6909091,13.2727273 15.2181818,12.6727273 16.4181818,11.6818182 L19.9090909,15.1727273 C17.7818182,17.0272727 15.0545455,18.1818182 12,18.1818182 Z'/%3E%3C/svg%3E");
+}
+
+.btn-facebook {
+  background-color: #1877F2;
+  color: white;
+  border: none;
+}
+
+.btn-facebook::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E");
+}
+
+.btn-github {
+  background-color: #24292e;
+  color: white;
+  border: none;
+}
+
+.btn-github::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 비밀번호 강도 표시 */
+.password-strength {
+  margin-top: var(--spacing-xs);
+}
+
+.strength-bar {
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xs);
+}
+
+.strength-level {
+  height: 100%;
+  width: 0;
+  background-color: var(--error-color);
+  transition: width var(--transition-normal) ease-in-out, background-color var(--transition-normal) ease-in-out;
+}
+
+.strength-text {
+  font-size: var(--font-size-xs);
+  color: var(--text-light);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 576px) {
+  .auth-container {
+    padding: var(--spacing-md);
+    box-shadow: none;
+  }
+  
+  .input-with-button {
+    flex-direction: column;
+  }
+  
+  .input-with-button button {
+    width: 100%;
+  }
+} 

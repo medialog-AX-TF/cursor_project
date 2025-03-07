@@ -6,6 +6,10 @@
     <title>게시글 목록 - 게시판 프로젝트</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/board.css">
+    <!-- 구글 폰트 Pretendard 추가 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- 아이콘 폰트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -26,8 +30,23 @@
                     <img src="../assets/default-avatar.png" alt="사용자 프로필">
                     <span>사용자님</span>
                 </a>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="profile.html"><i class="fa-regular fa-user"></i> 프로필</a></li>
+                        <li><a href="my-posts.html"><i class="fa-regular fa-file-lines"></i> 내 게시글</a></li>
+                        <li><a href="bookmarks.html"><i class="fa-regular fa-bookmark"></i> 북마크</a></li>
+                        <li><a href="settings.html"><i class="fa-solid fa-gear"></i> 설정</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> 로그아웃</a></li>
+                    </ul>
+                </div>
                 <button class="btn btn-logout">로그아웃</button>
             </div>
+            <button class="mobile-menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </header>
 
         <main class="post-list-container">
@@ -45,7 +64,7 @@
                         <option value="title_content">제목+내용</option>
                     </select>
                     <input type="text" placeholder="검색어를 입력하세요">
-                    <button class="btn btn-search">검색</button>
+                    <button class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
                 </div>
                 
                 <div class="post-filters">
@@ -56,7 +75,7 @@
                     </select>
                 </div>
                 
-                <a href="post-write.html" class="btn btn-primary">글쓰기</a>
+                <a href="post-write.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> 글쓰기</a>
             </div>
             
             <div class="post-list">
@@ -108,7 +127,7 @@
                             <td class="post-title">
                                 <a href="post-detail.html?id=8">추천 영화 공유합니다</a>
                                 <span class="comment-count">[8]</span>
-                                <span class="file-badge"><i class="icon-file"></i></span>
+                                <span class="file-badge"><i class="fa-solid fa-paperclip"></i></span>
                             </td>
                             <td class="post-author">이영희</td>
                             <td class="post-date">2025-03-03</td>
@@ -142,15 +161,15 @@
             </div>
             
             <div class="pagination">
-                <a href="#" class="page-first">&laquo;</a>
-                <a href="#" class="page-prev">&lt;</a>
+                <a href="#" class="page-first" aria-label="첫 페이지"><i class="fa-solid fa-angles-left"></i></a>
+                <a href="#" class="page-prev" aria-label="이전 페이지"><i class="fa-solid fa-angle-left"></i></a>
                 <a href="#" class="page-num">1</a>
                 <a href="#" class="page-num active">2</a>
                 <a href="#" class="page-num">3</a>
                 <a href="#" class="page-num">4</a>
                 <a href="#" class="page-num">5</a>
-                <a href="#" class="page-next">&gt;</a>
-                <a href="#" class="page-last">&raquo;</a>
+                <a href="#" class="page-next" aria-label="다음 페이지"><i class="fa-solid fa-angle-right"></i></a>
+                <a href="#" class="page-last" aria-label="마지막 페이지"><i class="fa-solid fa-angles-right"></i></a>
             </div>
         </main>
 
@@ -164,8 +183,19 @@
                 </ul>
             </div>
         </footer>
+        
+        <!-- 다크 모드 토글 버튼 -->
+        <button class="dark-mode-toggle" aria-label="다크 모드 전환" aria-checked="false">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+            <span class="sr-only">다크 모드 전환</span>
+        </button>
+        
+        <!-- 알림 컨테이너 -->
+        <div class="notification-container"></div>
     </div>
 
+    <script src="../scripts/main.js"></script>
     <script src="../scripts/board.js"></script>
 </body>
 </html> 

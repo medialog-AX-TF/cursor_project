@@ -1,0 +1,234 @@
+/* 
+ * 게시판 프로젝트 - 게시글 작성 페이지 스타일시트
+ * 게시글 작성 및 수정 페이지를 위한 스타일
+ */
+
+.post-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.post-form-container h1 {
+  margin-bottom: var(--spacing-xl);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.post-form {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.post-form .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-form label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.post-form input[type="text"],
+.post-form select,
+.post-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.post-form input:focus,
+.post-form select:focus,
+.post-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  outline: none;
+}
+
+.post-form textarea {
+  min-height: 300px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* 에디터 툴바 */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background-color: var(--background-alt);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.toolbar-btn:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--border-color);
+  margin: 0 var(--spacing-xs);
+}
+
+/* 파일 업로드 영역 */
+.file-upload-area {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.file-upload-area input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.file-upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--background-alt);
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.file-upload-area:hover .file-upload-placeholder {
+  border-color: var(--primary-color);
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+.icon-upload {
+  font-size: 2rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.file-upload-placeholder p {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.file-upload-hint {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 예약 발행 */
+.scheduled-publish {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.scheduled-publish label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: 0;
+}
+
+.scheduled-publish input[type="datetime-local"] {
+  width: auto;
+}
+
+/* 폼 액션 버튼 */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-xl);
+  gap: var(--spacing-md);
+}
+
+.form-actions button,
+.form-actions a {
+  flex: 1;
+  text-align: center;
+}
+
+.btn-temp-save {
+  background-color: var(--background-alt);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn-preview {
+  background-color: var(--background-alt);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn-cancel {
+  background-color: var(--background-alt);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .post-form {
+    padding: var(--spacing-md);
+  }
+  
+  .editor-toolbar {
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+  }
+  
+  .scheduled-publish {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .scheduled-publish input[type="datetime-local"] {
+    width: 100%;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+} 
