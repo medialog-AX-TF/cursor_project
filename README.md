@@ -119,6 +119,10 @@ cursor_project/
 
 ## 연락처
 
+
+![image](https://github.com/user-attachments/assets/eda2a256-7149-40cd-b7ae-73923182dab3)
+
+
 프로젝트 관리자 - [이메일 주소](mailto:your.email@example.com)
 
 프로젝트 링크: [https://github.com/medialog-AX-TF/cursor_project](https://github.com/medialog-AX-TF/cursor_project) 
