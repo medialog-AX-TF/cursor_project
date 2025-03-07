@@ -89,3 +89,25 @@
 - README.md 추가
 
 이제 개발자 A와 B는 각 기능별 프롬프트 템플릿을 활용하여 AI 어시스턴트와 효율적으로 협업할 수 있습니다.
+
+
+
+#### 업데이트된 HTML 템플릿 목록
+- **index.html** - 메인 페이지
+- **login.html** - 로그인 페이지
+- **register.html** - 회원가입 페이지
+- **board-list.html** - 게시판 목록 페이지
+- **post-list.html** - 게시글 목록 페이지
+- **post-detail.html** - 게시글 상세 페이지
+- **post-write.html** - 게시글 작성 페이지
+
+#### 개선 사항
+- 최신 CSS 프레임워크(Bootstrap, Tailwind CSS) 적용
+- 반응형 디자인을 더욱 강화
+- 접근성을 고려한 UI 개선
+- 스타일 일관성을 높이고, 시각적 효과 향상
+
+이제 개발자 A와 B는 최신 CSS가 반영된 HTML 템플릿을 기반으로 프론트엔드를 더욱 효과적으로 개발할 수 있습니다!
+
+
+
