@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - 게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="board-list.html">게시판</a></li>
+                    <li class="active"><a href="register.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="auth-container">
+            <h1>회원가입</h1>
+            
+            <form class="auth-form" id="register-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <div class="input-with-button">
+                        <input type="email" id="email" name="email" required>
+                        <button type="button" class="btn btn-secondary" id="check-email">중복확인</button>
+                    </div>
+                    <p class="form-hint">이메일은 로그인 아이디로 사용됩니다.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" required>
+                    <p class="form-hint">8자 이상, 대소문자, 숫자, 특수문자를 포함해야 합니다.</p>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-level" id="password-strength-level"></div>
+                        </div>
+                        <span class="strength-text" id="password-strength-text">비밀번호 강도</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password-confirm">비밀번호 확인</label>
+                    <input type="password" id="password-confirm" name="password-confirm" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nickname">닉네임</label>
+                    <div class="input-with-button">
+                        <input type="text" id="nickname" name="nickname" required>
+                        <button type="button" class="btn btn-secondary" id="check-nickname">중복확인</button>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">이용약관에 동의합니다. <a href="#" class="terms-link">(보기)</a></label>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">개인정보처리방침에 동의합니다. <a href="#" class="terms-link">(보기)</a></label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">회원가입</button>
+                </div>
+                
+                <div class="auth-links">
+                    <p>이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+                </div>
+                
+                <div class="social-login">
+                    <h3>소셜 계정으로 가입</h3>
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social btn-google">Google로 가입</button>
+                        <button type="button" class="btn btn-social btn-facebook">Facebook으로 가입</button>
+                        <button type="button" class="btn btn-social btn-github">GitHub로 가입</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/auth.js"></script>
+</body>
+</html> 

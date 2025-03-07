@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/home.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="index.html">홈</a></li>
+                    <li><a href="board-list.html">게시판</a></li>
+                    <li><a href="register.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="profile.html" class="user-profile">
+                    <img src="../assets/default-avatar.png" alt="사용자 프로필">
+                    <span>사용자님</span>
+                </a>
+                <button class="btn btn-logout">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="home-container">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>게시판 프로젝트에 오신 것을 환영합니다</h1>
+                    <p>다양한 주제로 소통하고 정보를 공유하는 공간입니다.</p>
+                    <div class="hero-buttons">
+                        <a href="board-list.html" class="btn btn-primary">게시판 둘러보기</a>
+                        <a href="register.html" class="btn btn-secondary">회원가입</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/hero-image.png" alt="게시판 프로젝트 이미지">
+                </div>
+            </section>
+            
+            <section class="features-section">
+                <h2>주요 기능</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-user"></i>
+                        </div>
+                        <h3>사용자 관리</h3>
+                        <p>회원가입, 로그인, 프로필 관리 기능을 제공합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-board"></i>
+                        </div>
+                        <h3>게시판 관리</h3>
+                        <p>다양한 카테고리의 게시판을 제공합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-post"></i>
+                        </div>
+                        <h3>게시글 관리</h3>
+                        <p>게시글 작성, 조회, 수정, 삭제 기능을 제공합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-comment"></i>
+                        </div>
+                        <h3>댓글 관리</h3>
+                        <p>게시글에 댓글을 작성하고 관리할 수 있습니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-file"></i>
+                        </div>
+                        <h3>파일 관리</h3>
+                        <p>다양한 파일을 업로드하고 다운로드할 수 있습니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="icon-search"></i>
+                        </div>
+                        <h3>검색 기능</h3>
+                        <p>원하는 게시글을 빠르게 찾을 수 있습니다.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="popular-boards-section">
+                <h2>인기 게시판</h2>
+                <div class="board-grid">
+                    <div class="board-card">
+                        <h3><a href="post-list.html?board=free">자유게시판</a></h3>
+                        <p>자유롭게 이야기를 나눌 수 있는 게시판</p>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 253</span>
+                            <span class="comment-count">댓글: 1,024</span>
+                        </div>
+                        <a href="post-list.html?board=free" class="btn btn-sm">바로가기</a>
+                    </div>
+                    <div class="board-card">
+                        <h3><a href="post-list.html?board=qna">질문과 답변</a></h3>
+                        <p>궁금한 점을 질문하고 답변을 얻을 수 있는 게시판</p>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 128</span>
+                            <span class="comment-count">댓글: 512</span>
+                        </div>
+                        <a href="post-list.html?board=qna" class="btn btn-sm">바로가기</a>
+                    </div>
+                    <div class="board-card">
+                        <h3><a href="post-list.html?board=gallery">갤러리</a></h3>
+                        <p>이미지와 사진을 공유하는 게시판</p>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 87</span>
+                            <span class="comment-count">댓글: 342</span>
+                        </div>
+                        <a href="post-list.html?board=gallery" class="btn btn-sm">바로가기</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="recent-posts-section">
+                <h2>최근 게시글</h2>
+                <div class="post-list">
+                    <div class="post-item">
+                        <div class="post-meta">
+                            <span class="post-board">자유게시판</span>
+                            <span class="post-date">2025-03-05</span>
+                        </div>
+                        <h3 class="post-title"><a href="post-detail.html?id=10">안녕하세요, 처음 가입했습니다.</a></h3>
+                        <p class="post-excerpt">안녕하세요, 처음으로 가입했습니다. 이 게시판을 통해 많은 정보를 얻고 좋은 사람들과 소통하고 싶습니다.</p>
+                        <div class="post-info">
+                            <span class="post-author">홍길동</span>
+                            <span class="post-comments">댓글 5</span>
+                            <span class="post-views">조회 42</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <div class="post-meta">
+                            <span class="post-board">질문과 답변</span>
+                            <span class="post-date">2025-03-04</span>
+                        </div>
+                        <h3 class="post-title"><a href="post-detail.html?id=9">오늘 날씨가 정말 좋네요</a></h3>
+                        <p class="post-excerpt">오늘 날씨가 정말 좋네요. 다들 어떻게 지내고 계신가요? 주말 계획은 어떻게 되시나요?</p>
+                        <div class="post-info">
+                            <span class="post-author">김철수</span>
+                            <span class="post-comments">댓글 12</span>
+                            <span class="post-views">조회 87</span>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <div class="post-meta">
+                            <span class="post-board">갤러리</span>
+                            <span class="post-date">2025-03-03</span>
+                        </div>
+                        <h3 class="post-title"><a href="post-detail.html?id=8">추천 영화 공유합니다</a></h3>
+                        <p class="post-excerpt">최근에 본 영화 중에 정말 좋았던 작품들을 공유합니다. 다들 어떤 영화를 좋아하시나요?</p>
+                        <div class="post-info">
+                            <span class="post-author">이영희</span>
+                            <span class="post-comments">댓글 8</span>
+                            <span class="post-views">조회 123</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-posts">
+                    <a href="board-list.html" class="btn btn-secondary">더 보기</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html> 

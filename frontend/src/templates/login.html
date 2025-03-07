@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - 게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="board-list.html">게시판</a></li>
+                    <li><a href="register.html">회원가입</a></li>
+                    <li class="active"><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="auth-container">
+            <h1>로그인</h1>
+            
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">로그인 상태 유지</label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </div>
+                
+                <div class="auth-links">
+                    <a href="forgot-password.html">비밀번호 찾기</a>
+                    <span>|</span>
+                    <a href="register.html">회원가입</a>
+                </div>
+                
+                <div class="social-login">
+                    <h3>소셜 로그인</h3>
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social btn-google">Google로 로그인</button>
+                        <button type="button" class="btn btn-social btn-facebook">Facebook으로 로그인</button>
+                        <button type="button" class="btn btn-social btn-github">GitHub로 로그인</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/auth.js"></script>
+</body>
+</html> 

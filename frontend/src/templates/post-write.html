@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성 - 게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/board.css">
+    <link rel="stylesheet" href="../styles/post-form.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li class="active"><a href="board-list.html">게시판</a></li>
+                    <li><a href="register.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="profile.html" class="user-profile">
+                    <img src="../assets/default-avatar.png" alt="사용자 프로필">
+                    <span>사용자님</span>
+                </a>
+                <button class="btn btn-logout">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="post-form-container">
+            <h1>게시글 작성</h1>
+            
+            <form class="post-form" id="post-write-form">
+                <div class="form-group">
+                    <label for="category">카테고리</label>
+                    <select id="category" name="category" required>
+                        <option value="">카테고리 선택</option>
+                        <option value="free">자유게시판</option>
+                        <option value="qna">질문과 답변</option>
+                        <option value="gallery">갤러리</option>
+                        <option value="tech">기술</option>
+                        <option value="hobby">취미</option>
+                        <option value="market">장터</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title" required maxlength="100" placeholder="제목을 입력하세요">
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="toolbar-btn btn-bold" title="굵게">B</button>
+                        <button type="button" class="toolbar-btn btn-italic" title="기울임">I</button>
+                        <button type="button" class="toolbar-btn btn-underline" title="밑줄">U</button>
+                        <button type="button" class="toolbar-btn btn-strike" title="취소선">S</button>
+                        <span class="toolbar-divider"></span>
+                        <button type="button" class="toolbar-btn btn-heading" title="제목">H</button>
+                        <button type="button" class="toolbar-btn btn-quote" title="인용구">""</button>
+                        <button type="button" class="toolbar-btn btn-code" title="코드">{"}</button>
+                        <button type="button" class="toolbar-btn btn-list" title="목록">•</button>
+                        <span class="toolbar-divider"></span>
+                        <button type="button" class="toolbar-btn btn-link" title="링크">🔗</button>
+                        <button type="button" class="toolbar-btn btn-image" title="이미지">🖼️</button>
+                        <button type="button" class="toolbar-btn btn-table" title="표">📊</button>
+                    </div>
+                    <textarea id="content" name="content" required rows="15" placeholder="내용을 입력하세요"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">태그</label>
+                    <input type="text" id="tags" name="tags" placeholder="쉼표로 구분하여 입력 (예: 태그1, 태그2, 태그3)">
+                    <p class="form-hint">태그는 최대 5개까지 입력 가능합니다.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="files">첨부 파일</label>
+                    <div class="file-upload-area">
+                        <input type="file" id="files" name="files" multiple>
+                        <div class="file-upload-placeholder">
+                            <i class="icon-upload"></i>
+                            <p>파일을 여기에 끌어다 놓거나 클릭하여 업로드하세요</p>
+                            <p class="file-upload-hint">최대 5개 파일, 각 파일 최대 10MB</p>
+                        </div>
+                    </div>
+                    <div class="file-list" id="file-preview-list"></div>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="is-private" name="is-private">
+                    <label for="is-private">비공개 글로 작성</label>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="is-notice" name="is-notice">
+                    <label for="is-notice">공지사항으로 등록 (관리자만 가능)</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="scheduled-date">예약 발행</label>
+                    <div class="scheduled-publish">
+                        <input type="checkbox" id="use-schedule" name="use-schedule">
+                        <label for="use-schedule">예약 발행 사용</label>
+                        <input type="datetime-local" id="scheduled-date" name="scheduled-date" disabled>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-temp-save">임시 저장</button>
+                    <button type="button" class="btn btn-secondary" id="btn-preview">미리보기</button>
+                    <button type="submit" class="btn btn-primary">등록</button>
+                    <a href="post-list.html" class="btn btn-cancel">취소</a>
+                </div>
+            </form>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/post-form.js"></script>
+</body>
+</html> 

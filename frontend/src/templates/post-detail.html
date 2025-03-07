@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 제목 - 게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/board.css">
+    <link rel="stylesheet" href="../styles/post.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li class="active"><a href="board-list.html">게시판</a></li>
+                    <li><a href="register.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="profile.html" class="user-profile">
+                    <img src="../assets/default-avatar.png" alt="사용자 프로필">
+                    <span>사용자님</span>
+                </a>
+                <button class="btn btn-logout">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="post-detail-container">
+            <div class="post-navigation">
+                <a href="post-list.html" class="btn btn-back">목록으로</a>
+                <div class="post-nav-links">
+                    <a href="post-detail.html?id=9" class="btn btn-nav btn-prev">이전글</a>
+                    <a href="post-detail.html?id=11" class="btn btn-nav btn-next">다음글</a>
+                </div>
+            </div>
+            
+            <article class="post">
+                <div class="post-header">
+                    <h1 class="post-title">안녕하세요, 처음 가입했습니다.</h1>
+                    <div class="post-meta">
+                        <div class="post-info">
+                            <span class="post-author">
+                                <img src="../assets/default-avatar.png" alt="작성자 프로필" class="author-avatar">
+                                홍길동
+                            </span>
+                            <span class="post-date">2025-03-05 14:32</span>
+                            <span class="post-views">조회 42</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-sm btn-share">공유</button>
+                            <button class="btn btn-sm btn-bookmark">북마크</button>
+                            <button class="btn btn-sm btn-report">신고</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-content">
+                    <p>안녕하세요, 처음으로 가입했습니다.</p>
+                    <p>이 게시판을 통해 많은 정보를 얻고 좋은 사람들과 소통하고 싶습니다.</p>
+                    <p>잘 부탁드립니다!</p>
+                </div>
+                
+                <div class="post-files">
+                    <h3>첨부파일</h3>
+                    <ul class="file-list">
+                        <li class="file-item">
+                            <a href="#" class="file-link">
+                                <i class="icon-file"></i>
+                                <span class="file-name">자기소개.pdf</span>
+                                <span class="file-size">(1.2MB)</span>
+                            </a>
+                            <span class="file-download-count">다운로드 5회</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="post-tags">
+                    <span class="tag">#자기소개</span>
+                    <span class="tag">#가입인사</span>
+                    <span class="tag">#반갑습니다</span>
+                </div>
+                
+                <div class="post-footer">
+                    <div class="post-vote">
+                        <button class="btn-vote btn-like">
+                            <i class="icon-like"></i>
+                            <span class="vote-count">7</span>
+                            <span class="vote-text">추천</span>
+                        </button>
+                        <button class="btn-vote btn-dislike">
+                            <i class="icon-dislike"></i>
+                            <span class="vote-count">1</span>
+                            <span class="vote-text">비추천</span>
+                        </button>
+                    </div>
+                    
+                    <div class="post-buttons">
+                        <a href="post-edit.html?id=10" class="btn btn-edit">수정</a>
+                        <button class="btn btn-delete">삭제</button>
+                    </div>
+                </div>
+            </article>
+            
+            <section class="comment-section">
+                <h2 class="comment-header">
+                    댓글 <span class="comment-count">5</span>
+                </h2>
+                
+                <div class="comment-form">
+                    <textarea placeholder="댓글을 작성해주세요." class="comment-textarea"></textarea>
+                    <div class="comment-form-footer">
+                        <div class="comment-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="comment-anonymous">
+                                <span>익명으로 작성</span>
+                            </label>
+                            <button class="btn btn-sm btn-attach">
+                                <i class="icon-image"></i>
+                                <span>이미지 첨부</span>
+                            </button>
+                        </div>
+                        <button class="btn btn-primary btn-submit-comment">댓글 작성</button>
+                    </div>
+                </div>
+                
+                <div class="comment-list">
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-info">
+                                <span class="comment-author">김철수</span>
+                                <span class="comment-date">2025-03-05 15:10</span>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-action btn-reply">답글</button>
+                                <button class="btn-action btn-report">신고</button>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <p>환영합니다! 앞으로 좋은 활동 기대할게요.</p>
+                        </div>
+                        <div class="comment-footer">
+                            <div class="comment-vote">
+                                <button class="btn-vote-sm btn-like-sm">
+                                    <i class="icon-like-sm"></i>
+                                    <span>3</span>
+                                </button>
+                                <button class="btn-vote-sm btn-dislike-sm">
+                                    <i class="icon-dislike-sm"></i>
+                                    <span>0</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 대댓글 -->
+                        <div class="reply-list">
+                            <div class="comment reply">
+                                <div class="comment-header">
+                                    <div class="comment-info">
+                                        <span class="comment-author">홍길동</span>
+                                        <span class="comment-date">2025-03-05 15:45</span>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <button class="btn-action btn-reply">답글</button>
+                                        <button class="btn-action btn-report">신고</button>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    <p>감사합니다! 열심히 활동할게요.</p>
+                                </div>
+                                <div class="comment-footer">
+                                    <div class="comment-vote">
+                                        <button class="btn-vote-sm btn-like-sm">
+                                            <i class="icon-like-sm"></i>
+                                            <span>2</span>
+                                        </button>
+                                        <button class="btn-vote-sm btn-dislike-sm">
+                                            <i class="icon-dislike-sm"></i>
+                                            <span>0</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-info">
+                                <span class="comment-author">이영희</span>
+                                <span class="comment-date">2025-03-05 16:22</span>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-action btn-reply">답글</button>
+                                <button class="btn-action btn-report">신고</button>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <p>반갑습니다~ 저도 얼마 전에 가입했어요.</p>
+                        </div>
+                        <div class="comment-footer">
+                            <div class="comment-vote">
+                                <button class="btn-vote-sm btn-like-sm">
+                                    <i class="icon-like-sm"></i>
+                                    <span>1</span>
+                                </button>
+                                <button class="btn-vote-sm btn-dislike-sm">
+                                    <i class="icon-dislike-sm"></i>
+                                    <span>0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-info">
+                                <span class="comment-author">익명</span>
+                                <span class="comment-date">2025-03-05 17:05</span>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-action btn-reply">답글</button>
+                                <button class="btn-action btn-report">신고</button>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <p>첨부하신 자기소개 파일 잘 봤습니다!</p>
+                        </div>
+                        <div class="comment-footer">
+                            <div class="comment-vote">
+                                <button class="btn-vote-sm btn-like-sm">
+                                    <i class="icon-like-sm"></i>
+                                    <span>0</span>
+                                </button>
+                                <button class="btn-vote-sm btn-dislike-sm">
+                                    <i class="icon-dislike-sm"></i>
+                                    <span>0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment-pagination">
+                    <a href="#" class="page-num active">1</a>
+                    <a href="#" class="page-num">2</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/post.js"></script>
+</body>
+</html> 

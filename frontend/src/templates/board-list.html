@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 목록 - 게시판 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/board.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html">게시판 프로젝트</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li class="active"><a href="board-list.html">게시판</a></li>
+                    <li><a href="register.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="profile.html" class="user-profile">
+                    <img src="../assets/default-avatar.png" alt="사용자 프로필">
+                    <span>사용자님</span>
+                </a>
+                <button class="btn btn-logout">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="board-container">
+            <h1>게시판 목록</h1>
+            
+            <div class="board-search">
+                <input type="text" placeholder="게시판 검색">
+                <button class="btn btn-search">검색</button>
+            </div>
+            
+            <div class="category-section">
+                <h2>공지사항</h2>
+                <div class="board-list">
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=notice">공지사항</a></h3>
+                            <p>사이트 공지사항 및 업데이트 정보</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 15</span>
+                            <span class="comment-count">댓글: 32</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-section">
+                <h2>일반 게시판</h2>
+                <div class="board-list">
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=free">자유게시판</a></h3>
+                            <p>자유롭게 이야기를 나눌 수 있는 게시판</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 253</span>
+                            <span class="comment-count">댓글: 1,024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=qna">질문과 답변</a></h3>
+                            <p>궁금한 점을 질문하고 답변을 얻을 수 있는 게시판</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 128</span>
+                            <span class="comment-count">댓글: 512</span>
+                        </div>
+                    </div>
+                    
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=gallery">갤러리</a></h3>
+                            <p>이미지와 사진을 공유하는 게시판</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 87</span>
+                            <span class="comment-count">댓글: 342</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-section">
+                <h2>주제별 게시판</h2>
+                <div class="board-list">
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=tech">기술</a></h3>
+                            <p>기술 관련 정보와 토론</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 76</span>
+                            <span class="comment-count">댓글: 215</span>
+                        </div>
+                    </div>
+                    
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=hobby">취미</a></h3>
+                            <p>다양한 취미 활동에 대한 이야기</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 92</span>
+                            <span class="comment-count">댓글: 367</span>
+                        </div>
+                    </div>
+                    
+                    <div class="board-item">
+                        <div class="board-info">
+                            <h3><a href="post-list.html?board=market">장터</a></h3>
+                            <p>중고 물품 거래 게시판</p>
+                        </div>
+                        <div class="board-stats">
+                            <span class="post-count">게시글: 134</span>
+                            <span class="comment-count">댓글: 489</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 게시판 프로젝트. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/board.js"></script>
+</body>
+</html> 
