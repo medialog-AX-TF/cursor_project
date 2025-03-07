@@ -1,4 +1,4 @@
-# 게시판 구축 프로젝트 (Board Construction Project)
+# Cursor 를 활용한 게시판 구축 프로젝트 (Board Construction Project)
 
 ## 프로젝트 개요
 
